@@ -3,259 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تجربة رقمية مذهلة</title>
-    <!-- استيراد خط تجريد عصري من جوجل -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>معرض إمكانيات التصميم والألوان</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: 'Cairo', sans-serif;
         }
 
         body {
-            background-color: #0b0f19;
-            color: #ffffff;
+            background-color: #0f172a;
+            color: #f8fafc;
             min-height: 100vh;
+            padding: 40px 20px;
             overflow-x: hidden;
-            position: relative;
         }
 
-        /* خلفية متدرجة متحركة */
-        .background-glow {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, #6366f1, #a855f7);
-            filter: blur(120px);
-            border-radius: 50%;
-            top: -100px;
-            right: -100px;
-            z-index: -1;
-            opacity: 0.6;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .background-glow-2 {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, #3b82f6, #14b8a6);
-            filter: blur(140px);
-            border-radius: 50%;
-            bottom: -100px;
-            left: -100px;
-            z-index: -1;
-            opacity: 0.5;
-        }
-
-        /* الهيدر */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 5%;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, #818cf8, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        nav a {
-            color: #94a3b8;
-            text-decoration: none;
-            margin-left: 2rem;
-            transition: color 0.3s;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            color: #ffffff;
-        }
-
-        /* القسم الرئيسي */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
-            padding: 6rem 2rem 4rem;
-            max-width: 900px;
-            margin: 0 auto;
+            margin-bottom: 50px;
         }
 
-        .badge {
-            background: rgba(99, 102, 241, 0.1);
-            color: #818cf8;
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-
-        h1 span {
-            background: linear-gradient(90deg, #818cf8, #e879f9);
+        header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
         }
 
-        p {
+        header p {
             color: #94a3b8;
-            font-size: 1.15rem;
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
+            font-size: 1.1rem;
         }
 
-        /* الأزرار */
-        .cta-buttons {
+        .section-title {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            border-right: 4px solid #38bdf8;
+            padding-right: 15px;
+            color: #e2e8f0;
+        }
+
+        /* شبكة البطاقات */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 16px;
+            padding: 25px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: #38bdf8;
+        }
+
+        /* لوحات الألوان والتدرجات */
+        .color-box {
+            height: 80px;
+            border-radius: 10px;
+            margin-bottom: 12px;
             display: flex;
-            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+        }
+
+        .grad-1 { background: linear-gradient(135deg, #ff7e5f, #feb47b); }
+        .grad-2 { background: linear-gradient(135deg, #6a11cb, #2575fc); }
+        .grad-3 { background: linear-gradient(135deg, #0ba360, #3cba92); }
+        .grad-4 { background: linear-gradient(135deg, #f857a6, #ff5858); }
+
+        /* تأثيرات الأزرار والتفاعل */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .btn {
-            padding: 0.9rem 2.2rem;
-            border-radius: 12px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            border: none;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-decoration: none;
-            font-size: 1rem;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-            border: none;
-            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+            background: #38bdf8;
+            color: #0f172a;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.6);
+            background: #0ea5e9;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
         }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #c084fc;
+            color: #c084fc;
         }
 
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
+        .btn-outline:hover {
+            background: #c084fc;
+            color: #0f172a;
+            box-shadow: 0 0 15px rgba(192, 132, 252, 0.6);
         }
 
-        /* بطاقات الميزات */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.02);
+        /* العناصر المتحركة */
+        .animation-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 150px;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s, border-color 0.3s;
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(99, 102, 241, 0.4);
+        .pulse-circle {
+            width: 60px;
+            height: 60px;
+            background: #38bdf8;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
         }
 
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: #f8fafc;
-        }
-
-        .feature-card p {
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        /* التجاوب مع الشاشات الصغيرة */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
             }
-            .cta-buttons {
-                flex-direction: column;
-                width: 100%;
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 20px rgba(56, 189, 248, 0);
             }
-            .btn {
-                width: 100%;
-                text-align: center;
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
             }
+        }
+
+        .spin-box {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #c084fc, #f857a6);
+            border-radius: 12px;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
 
-    <!-- تأثيرات الإضاءة الخلفية -->
-    <div class="background-glow"></div>
-    <div class="background-glow-2"></div>
+    <div class="container">
+        <header>
+            <h1>معرض التصميم والألوان</h1>
+            <p>نموذج حقيقي يعكس القدرة على دمج الألوان، التدرجات، التصميم العصري والتأثيرات البصرية.</p>
+        </header>
 
-    <!-- رأس الصفحة -->
-    <header>
-        <div class="logo">NovaSphere</div>
-        <nav>
-            <a href="#">الرئيسية</a>
-            <a href="#">المميزات</a>
-            <a href="#">من نحن</a>
-            <a href="#">اتصل بنا</a>
-        </nav>
-    </header>
+        <!-- قسم التدرجات اللونية -->
+        <h2 class="section-title">التدرجات اللونية الحديثة (Gradients)</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>غروب دافئ</h3>
+                <div class="color-box grad-1">#ff7e5f ➔ #feb47b</div>
+            </div>
+            <div class="card">
+                <h3>أعماق النيون</h3>
+                <div class="color-box grad-2">#6a11cb ➔ #2575fc</div>
+            </div>
+            <div class="card">
+                <h3>طبيعة حيوية</h3>
+                <div class="color-box grad-3">#0ba360 ➔ #3cba92</div>
+            </div>
+            <div class="card">
+                <h3>طاقة وردية</h3>
+                <div class="color-box grad-4">#f857a6 ➔ #ff5858</div>
+            </div>
+        </div>
 
-    <!-- المحتوى البارز -->
-    <section class="hero">
-        <div class="badge">✨ تصميم المستقبل بين يديك</div>
-        <h1>اصنع تجارب ويب استثنائية <span>بكل سهولة</span></h1>
-        <p>نقدم لك تصاميم ذكية وعصرية تجمع بين جمال الألوان، سلاسة الأداء، وتجربة مستخدم لا تُنسى لتتميز عن الجميع.</p>
-        
-        <div class="cta-buttons">
-            <a href="#" class="btn btn-primary">ابدأ الانجاز الآن</a>
-            <a href="#" class="btn btn-secondary">استكشف الأعمال</a>
+        <!-- قسم الأزرار والتفاعل -->
+        <h2 class="section-title">التصميم التفاعلي (UI / UX Elements)</h2>
+        <div class="card">
+            <h3>أنماط الأزرار والتأثيرات المضيئة (Glow Effects)</h3>
+            <div class="btn-group" style="margin-top: 20px;">
+                <button class="btn btn-primary">زر رئيسي مضيء</button>
+                <button class="btn btn-outline">زر بإطار وتفاعل</button>
+            </div>
         </div>
-    </section>
 
-    <!-- بطاقات الميزات -->
-    <section class="features">
-        <div class="feature-card">
-            <h3>سرعة فائقة</h3>
-            <p>أكواد نظيفة ومُحسّنة بالكامل لضمان تحميل صفحاتك في أجزاء من الثانية.</p>
+        <!-- قسم الحركات والأنيميشن -->
+        <h2 class="section-title">الحركات البصرية (CSS Animations)</h2>
+        <div class="card">
+            <h3>عناصر متحركة بتأثيرات ديناميكية</h3>
+            <div class="animation-container">
+                <div class="pulse-circle"></div>
+                <div class="spin-box"></div>
+            </div>
         </div>
-        <div class="feature-card">
-            <h3>تصميم متجاوب</h3>
-            <p>يتكيف بسلاسة تامة مع جميع الشاشات، من الهواتف الذكية وحتى الشاشات العملاقة.</p>
-        </div>
-        <div class="feature-card">
-            <h3>مظهر عصري</h3>
-            <p>نظام ألوان داكن فخم يعتمد على تقنيات الزجاج المعشى (Glassmorphism).</p>
-        </div>
-    </section>
+    </div>
 
 </body>
 </html>
