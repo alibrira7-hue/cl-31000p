@@ -1,239 +1,393 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض إمكانيات التصميم والألوان</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Cairo', sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مختبر الإبداع البصري</title>
 
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            min-height: 100vh;
-            padding: 40px 20px;
-            overflow-x: hidden;
-        }
+<style>
+:root {
+  --bg: #090d1a;
+  --card: #151c30;
+  --text: #f5f7ff;
+  --purple: #a855f7;
+  --blue: #38bdf8;
+  --pink: #ec4899;
+  --green: #34d399;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+body {
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
 
-        header h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
+header {
+  padding: 70px 20px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 20% 20%, #7c3aed55, transparent 40%),
+    radial-gradient(circle at 80% 80%, #0891b255, transparent 40%),
+    #090d1a;
+}
 
-        header p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-        }
+header h1 {
+  font-size: clamp(32px, 6vw, 65px);
+  background: linear-gradient(90deg,#38bdf8,#c084fc,#f472b6);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+}
 
-        .section-title {
-            font-size: 1.8rem;
-            margin: 40px 0 20px;
-            border-right: 4px solid #38bdf8;
-            padding-right: 15px;
-            color: #e2e8f0;
-        }
+header p {
+  color: #aab5d0;
+  font-size: 18px;
+}
 
-        /* شبكة البطاقات */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
+.container {
+  max-width: 1150px;
+  margin: auto;
+  padding: 30px 20px;
+}
 
-        .card {
-            background: rgba(30, 41, 59, 0.7);
-            border-radius: 16px;
-            padding: 25px;
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+h2 {
+  margin: 40px 0 20px;
+  color: #c4b5fd;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
-        }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+}
 
-        .card h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            color: #38bdf8;
-        }
+.card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid #ffffff12;
+  transition: .3s;
+}
 
-        /* لوحات الألوان والتدرجات */
-        .color-box {
-            height: 80px;
-            border-radius: 10px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: #fff;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-        }
+.card:hover {
+  transform: translateY(-7px);
+  border-color: #a855f7;
+  box-shadow: 0 15px 40px #7c3aed30;
+}
 
-        .grad-1 { background: linear-gradient(135deg, #ff7e5f, #feb47b); }
-        .grad-2 { background: linear-gradient(135deg, #6a11cb, #2575fc); }
-        .grad-3 { background: linear-gradient(135deg, #0ba360, #3cba92); }
-        .grad-4 { background: linear-gradient(135deg, #f857a6, #ff5858); }
+/* تدرجات الألوان */
 
-        /* تأثيرات الأزرار والتفاعل */
-        .btn-group {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+.gradient {
+  height: 130px;
+  border-radius: 15px;
+  background: linear-gradient(135deg,#7c3aed,#ec4899,#f97316);
+}
 
-        .btn {
-            padding: 12px 25px;
-            border-radius: 30px;
-            border: none;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.gradient2 {
+  height: 130px;
+  border-radius: 15px;
+  background: linear-gradient(135deg,#06b6d4,#3b82f6,#8b5cf6);
+}
 
-        .btn-primary {
-            background: #38bdf8;
-            color: #0f172a;
-        }
+.gradient3 {
+  height: 130px;
+  border-radius: 15px;
+  background: radial-gradient(circle,#facc15,#f97316,#7c2d12);
+}
 
-        .btn-primary:hover {
-            background: #0ea5e9;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
-        }
+/* الأشكال الهندسية */
 
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #c084fc;
-            color: #c084fc;
-        }
+.shapes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 25px;
+}
 
-        .btn-outline:hover {
-            background: #c084fc;
-            color: #0f172a;
-            box-shadow: 0 0 15px rgba(192, 132, 252, 0.6);
-        }
+.circle {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: linear-gradient(45deg,#06b6d4,#8b5cf6);
+}
 
-        /* العناصر المتحركة */
-        .animation-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 150px;
-            background: rgba(15, 23, 42, 0.5);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
+.square {
+  width: 85px;
+  height: 85px;
+  background: linear-gradient(45deg,#f43f5e,#facc15);
+  transform: rotate(15deg);
+}
 
-        .pulse-circle {
-            width: 60px;
-            height: 60px;
-            background: #38bdf8;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-bottom: 85px solid #34d399;
+}
 
-        @keyframes pulse {
-            0% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
-            }
-            70% {
-                transform: scale(1);
-                box-shadow: 0 0 0 20px rgba(56, 189, 248, 0);
-            }
-            100% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
-            }
-        }
+/* توهج */
 
-        .spin-box {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #c084fc, #f857a6);
-            border-radius: 12px;
-            animation: spin 4s linear infinite;
-        }
+.glow {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+  border-radius: 50%;
+  background: #a855f7;
+  box-shadow: 0 0 25px #a855f7,
+              0 0 60px #a855f7,
+              0 0 100px #a855f755;
+}
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+/* الحركة */
+
+.animation {
+  width: 75px;
+  height: 75px;
+  margin: 25px auto;
+  border-radius: 15px;
+  background: linear-gradient(45deg,#06b6d4,#a855f7);
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.3); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.pulse {
+  width: 60px;
+  height: 60px;
+  margin: 30px auto;
+  border-radius: 50%;
+  background: #ec4899;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: .5; }
+}
+
+/* الأزرار */
+
+button {
+  border: none;
+  padding: 13px 25px;
+  margin: 8px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  transition: .3s;
+}
+
+button:hover {
+  transform: scale(1.08);
+  filter: brightness(1.2);
+}
+
+.btn-purple {
+  background: linear-gradient(45deg,#7c3aed,#c084fc);
+}
+
+.btn-blue {
+  background: linear-gradient(45deg,#0284c7,#38bdf8);
+}
+
+.btn-pink {
+  background: linear-gradient(45deg,#db2777,#fb7185);
+}
+
+/* الرسوم البيانية */
+
+.chart {
+  display: flex;
+  align-items: end;
+  justify-content: space-around;
+  height: 220px;
+  padding: 15px;
+  gap: 12px;
+}
+
+.bar {
+  flex: 1;
+  max-width: 65px;
+  border-radius: 9px 9px 0 0;
+  background: linear-gradient(to top,#7c3aed,#38bdf8);
+  animation: grow 1.5s ease-out;
+}
+
+@keyframes grow {
+  from { height: 0; }
+}
+
+/* الزجاج */
+
+.glass {
+  background: #ffffff12;
+  border: 1px solid #ffffff35;
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+}
+
+/* الألوان */
+
+.colors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(90px,1fr));
+  gap: 10px;
+}
+
+.color {
+  height: 85px;
+  border-radius: 12px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding: 8px;
+  font-size: 11px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #8490aa;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        <header>
-            <h1>معرض التصميم والألوان</h1>
-            <p>نموذج حقيقي يعكس القدرة على دمج الألوان، التدرجات، التصميم العصري والتأثيرات البصرية.</p>
-        </header>
+<header>
+  <h1>مختبر الإبداع البصري</h1>
+  <p>اكتشف عالم الألوان والتصميم والرسوم والحركة</p>
+</header>
 
-        <!-- قسم التدرجات اللونية -->
-        <h2 class="section-title">التدرجات اللونية الحديثة (Gradients)</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>غروب دافئ</h3>
-                <div class="color-box grad-1">#ff7e5f ➔ #feb47b</div>
-            </div>
-            <div class="card">
-                <h3>أعماق النيون</h3>
-                <div class="color-box grad-2">#6a11cb ➔ #2575fc</div>
-            </div>
-            <div class="card">
-                <h3>طبيعة حيوية</h3>
-                <div class="color-box grad-3">#0ba360 ➔ #3cba92</div>
-            </div>
-            <div class="card">
-                <h3>طاقة وردية</h3>
-                <div class="color-box grad-4">#f857a6 ➔ #ff5858</div>
-            </div>
-        </div>
+<main class="container">
 
-        <!-- قسم الأزرار والتفاعل -->
-        <h2 class="section-title">التصميم التفاعلي (UI / UX Elements)</h2>
-        <div class="card">
-            <h3>أنماط الأزرار والتأثيرات المضيئة (Glow Effects)</h3>
-            <div class="btn-group" style="margin-top: 20px;">
-                <button class="btn btn-primary">زر رئيسي مضيء</button>
-                <button class="btn btn-outline">زر بإطار وتفاعل</button>
-            </div>
-        </div>
+<h2>1. التدرجات اللونية</h2>
+<div class="grid">
+  <div class="card"><div class="gradient"></div><p>تدرج ناري</p></div>
+  <div class="card"><div class="gradient2"></div><p>تدرج فضائي</p></div>
+  <div class="card"><div class="gradient3"></div><p>تدرج شمسي</p></div>
+</div>
 
-        <!-- قسم الحركات والأنيميشن -->
-        <h2 class="section-title">الحركات البصرية (CSS Animations)</h2>
-        <div class="card">
-            <h3>عناصر متحركة بتأثيرات ديناميكية</h3>
-            <div class="animation-container">
-                <div class="pulse-circle"></div>
-                <div class="spin-box"></div>
-            </div>
-        </div>
-    </div>
+<h2>2. الأشكال الهندسية</h2>
+<div class="card shapes">
+  <div class="circle"></div>
+  <div class="square"></div>
+  <div class="triangle"></div>
+</div>
+
+<h2>3. الإضاءة والتوهج</h2>
+<div class="grid">
+  <div class="card">
+    <div class="glow"></div>
+    <p>تأثير الإضاءة النيونية</p>
+  </div>
+  <div class="card">
+    <div class="pulse"></div>
+    <p>تأثير النبض</p>
+  </div>
+</div>
+
+<h2>4. الرسوم المتحركة</h2>
+<div class="grid">
+  <div class="card">
+    <div class="animation"></div>
+    <p>الدوران والتكبير</p>
+  </div>
+  <div class="card">
+    <div class="pulse"></div>
+    <p>الحركة الدورية</p>
+  </div>
+</div>
+
+<h2>5. الأزرار التفاعلية</h2>
+<div class="card" style="text-align:center">
+  <button class="btn-purple" onclick="alert('مرحباً بالإبداع!')">زر بنفسجي</button>
+  <button class="btn-blue" onclick="changeBackground()">تغيير الخلفية</button>
+  <button class="btn-pink" onclick="randomColor()">لون عشوائي</button>
+</div>
+
+<h2>6. الرسوم البيانية</h2>
+<div class="card">
+  <p>مخطط الأعمدة التوضيحي</p>
+  <div class="chart">
+    <div class="bar" style="height:45%"></div>
+    <div class="bar" style="height:80%"></div>
+    <div class="bar" style="height:60%"></div>
+    <div class="bar" style="height:100%"></div>
+    <div class="bar" style="height:70%"></div>
+    <div class="bar" style="height:90%"></div>
+  </div>
+</div>
+
+<h2>7. لوحة الألوان</h2>
+<div class="colors">
+  <div class="color" style="background:#ef4444">أحمر</div>
+  <div class="color" style="background:#f97316">برتقالي</div>
+  <div class="color" style="background:#eab308">أصفر</div>
+  <div class="color" style="background:#22c55e">أخضر</div>
+  <div class="color" style="background:#06b6d4">سماوي</div>
+  <div class="color" style="background:#3b82f6">أزرق</div>
+  <div class="color" style="background:#8b5cf6">بنفسجي</div>
+  <div class="color" style="background:#ec4899">وردي</div>
+</div>
+
+<h2>8. تأثير الزجاج Glassmorphism</h2>
+<div class="card" style="
+ background:linear-gradient(120deg,#7c3aed,#0891b2,#db2777);
+ padding:30px;">
+  <div class="glass">
+    <h3>تصميم زجاجي عصري</h3>
+    <p>شفافية + ضبابية + إضاءة + عمق بصري</p>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  صُنع باستخدام HTML و CSS و JavaScript
+  <p>Creative Visual Lab © 2026</p>
+</footer>
+
+<script>
+function changeBackground() {
+  document.body.style.background =
+    document.body.style.background === 'rgb(20, 20, 40)'
+    ? '#090d1a' : 'rgb(20, 20, 40)';
+}
+
+function randomColor() {
+  const color = '#' + Math.floor(
+    Math.random()*16777215
+  ).toString(16).padStart(6,'0');
+
+  document.documentElement.style.setProperty(
+    '--purple', color
+  );
+
+  document.querySelector('header h1').style.background =
+    `linear-gradient(90deg,${color},#38bdf8,#ec4899)`;
+
+  document.querySelector('header h1').style.webkitBackgroundClip =
+    'text';
+}
+</script>
 
 </body>
 </html>
