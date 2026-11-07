@@ -4,155 +4,264 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUXURY CARS</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<title>دار الأصالة | الأزياء المغربية</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
- background:#080808;color:white;
- font-family:'Cairo',sans-serif;
- overflow-x:hidden;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-header{
- height:85px;padding:0 7%;
- display:flex;align-items:center;
- justify-content:space-between;
- position:absolute;top:0;width:100%;
- z-index:10;
- border-bottom:1px solid #ffffff20;
+
+body {
+  font-family: 'Cairo', sans-serif;
+  min-height: 100vh;
+  background: #f3eee6;
+  color: #3c3025;
+  display: flex;
+  justify-content: center;
+  padding: 25px 15px;
 }
-.logo{font-size:27px;font-weight:900;color:#d6ad60}
-nav{display:flex;gap:35px}
-nav a{color:white;text-decoration:none;transition:.3s}
-nav a:hover{color:#d6ad60}
-.hero{
- min-height:100vh;
- position:relative;
- display:flex;align-items:center;
- overflow:hidden;
- background:
- linear-gradient(90deg,#080808 5%,#080808aa 42%,transparent 100%),
- url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=2000')
- center/cover no-repeat;
+
+.container {
+  width: 100%;
+  max-width: 430px;
+  text-align: center;
 }
-.hero::after{
- content:"";position:absolute;inset:0;
- background:linear-gradient(0deg,#080808 0%,transparent 40%);
- pointer-events:none;
+
+.hero {
+  position: relative;
+  height: 245px;
+  overflow: hidden;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px #4c39231c;
 }
-.content{
- position:relative;z-index:2;
- margin-right:9%;max-width:570px;
- animation:show 1.3s ease;
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.tag{color:#d6ad60;letter-spacing:4px;font-size:13px}
-h1{
- font-size:clamp(48px,7vw,90px);
- line-height:1.2;font-weight:900;
- margin:20px 0;
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent, #20150b80);
 }
-h1 span{color:#d6ad60}
-.content p{color:#ccc;font-size:17px;line-height:2}
-.btn{
- display:inline-block;margin-top:30px;
- padding:14px 40px;
- background:#d6ad60;color:#080808;
- text-decoration:none;font-weight:bold;
- transition:.4s;
+
+.brand {
+  margin: 22px 0 18px;
 }
-.btn:hover{background:white;transform:translateY(-5px)}
-.stats{
- display:flex;gap:55px;margin-top:60px;
+
+.brand h1 {
+  font-size: 32px;
+  color: #76512f;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
-.stat h2{color:#d6ad60;font-size:30px}
-.stat p{font-size:12px;color:#aaa}
-.scroll{
- position:absolute;bottom:35px;left:7%;
- color:#d6ad60;z-index:3;
- writing-mode:vertical-rl;
- letter-spacing:4px;font-size:11px;
+
+.brand .en {
+  color: #a58a68;
+  font-size: 10px;
+  letter-spacing: 4px;
+  direction: ltr;
 }
-.cars{padding:100px 7%;background:#080808}
-.section-title{text-align:center;margin-bottom:55px}
-.section-title h2{font-size:40px}
-.section-title span{color:#d6ad60}
-.cards{
- display:grid;grid-template-columns:repeat(3,1fr);
- gap:25px;
+
+.brand p {
+  font-size: 13px;
+  color: #81705f;
+  margin-top: 12px;
 }
-.card{
- background:#151515;overflow:hidden;
- border:1px solid #ffffff12;
- transition:.4s;
+
+.line {
+  width: 55px;
+  height: 2px;
+  background: #c5a16c;
+  margin: 15px auto;
 }
-.card:hover{transform:translateY(-10px);border-color:#d6ad60}
-.card img{width:100%;height:220px;object-fit:cover}
-.card h3{padding:18px 20px 5px}
-.card p{padding:0 20px 20px;color:#aaa}
-@keyframes show{
- from{opacity:0;transform:translateY(35px)}
- to{opacity:1;transform:translateY(0)}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
 }
-@media(max-width:800px){
- nav{gap:12px;font-size:12px}
- .hero{background-position:60% center}
- .content{margin:0 7%;padding-top:100px}
- .cards{grid-template-columns:1fr}
- .stats{gap:25px}
+
+.gallery img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px #00000012;
 }
+
+.section-title {
+  font-size: 17px;
+  color: #76512f;
+  margin: 22px 0 13px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 14px 18px;
+  border-radius: 13px;
+  background: #fff;
+  color: #65472e;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid #e6dac9;
+  transition: .25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px #00000008;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: #795b3b;
+  color: white;
+}
+
+.whatsapp {
+  background: #276b4c;
+  color: white;
+  border: none;
+}
+
+.whatsapp:hover {
+  background: #174d36;
+}
+
+.location {
+  background: #785b3c;
+  color: white;
+  border: none;
+}
+
+.social {
+  margin-top: 23px;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.social a {
+  color: #856b4d;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+footer {
+  color: #a18c75;
+  font-size: 11px;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
 </style>
 </head>
+
 <body>
 
-<header>
- <div class="logo">LUXURY.</div>
- <nav>
-  <a href="#">الرئيسية</a>
-  <a href="#cars">السيارات</a>
-  <a href="#about">من نحن</a>
- </nav>
-</header>
+<div class="container">
 
-<section class="hero">
- <div class="content">
-  <div class="tag">THE ART OF DRIVING</div>
-  <h1>قوة.<br><span>فخامة.</span><br>بلا حدود.</h1>
-  <p>اكتشف عالم السيارات الاستثنائية، حيث تلتقي القوة بالأناقة والتكنولوجيا.</p>
-  <a href="#cars" class="btn">اكتشف السيارات ↗</a>
+  <!-- الصورة الرئيسية -->
+  <div class="hero">
+    <img
+      src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900"
+      alt="أزياء تقليدية أنيقة">
+  </div>
 
-  <div class="stats">
-   <div class="stat"><h2>250+</h2><p>سيارة فاخرة</p></div>
-   <div class="stat"><h2>50+</h2><p>علامة عالمية</p></div>
-   <div class="stat"><h2>100%</h2><p>تميز وأناقة</p></div>
+  <!-- اسم المحل -->
+  <div class="brand">
+    <h1>دار الأصالة</h1>
+    <div class="en">DAR AL ASSALA</div>
+    <div class="line"></div>
+    <p>
+      أناقة مغربية تحكي قصة الأصالة والفخامة
+      <br>
+      مرحباً بكم في عالم الأزياء التقليدية.
+    </p>
   </div>
- </div>
- <div class="scroll">SCROLL TO EXPLORE</div>
-</section>
 
-<section class="cars" id="cars">
- <div class="section-title">
-  <h2>اختيارات <span>النخبة</span></h2>
-  <p style="color:#888">اكتشف روعة التصميم والأداء</p>
- </div>
+  <!-- صور المنتجات -->
+  <div class="gallery">
+    <img
+      src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600"
+      alt="أزياء نسائية">
 
- <div class="cards">
-  <div class="card">
-   <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800" alt="سيارة رياضية">
-   <h3>Porsche 911</h3>
-   <p>الأداء الألماني الأسطوري</p>
+    <img
+      src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600"
+      alt="أناقة وأزياء">
   </div>
-  <div class="card">
-   <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800" alt="سيارة فاخرة">
-   <h3>BMW M Series</h3>
-   <p>القوة والأناقة</p>
+
+  <h2 class="section-title">يسعدنا تواصلكم معنا</h2>
+
+  <!-- الروابط -->
+  <div class="links">
+
+    <a class="btn whatsapp"
+       href="https://wa.me/212600000000"
+       target="_blank">
+       <span>☏</span>
+       تواصل معنا عبر واتساب
+    </a>
+
+    <a class="btn location"
+       href="https://maps.google.com/?q=Marrakech,Morocco"
+       target="_blank">
+       <span>📍</span>
+       موقع المحل على الخريطة
+    </a>
+
+    <a class="btn"
+       href="https://instagram.com/"
+       target="_blank">
+       <span>◎</span>
+       تابعونا على Instagram
+    </a>
+
+    <a class="btn"
+       href="https://facebook.com/"
+       target="_blank">
+       <span>f</span>
+       صفحتنا على Facebook
+    </a>
+
+    <a class="btn"
+       href="https://tiktok.com/"
+       target="_blank">
+       <span>♪</span>
+       شاهدونا على TikTok
+    </a>
+
   </div>
-  <div class="card">
-   <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=800" alt="سيارة رياضية">
-   <h3>Super Cars</h3>
-   <p>تجربة قيادة استثنائية</p>
+
+  <div class="social">
+    <a href="https://instagram.com/">INSTAGRAM</a>
+    <a href="https://facebook.com/">FACEBOOK</a>
+    <a href="https://tiktok.com/">TIKTOK</a>
   </div>
- </div>
-</section>
+
+  <footer>
+    © 2026 دار الأصالة — جميع الحقوق محفوظة
+    <br>
+    صُنع بحب في المغرب 🇲🇦
+  </footer>
+
+</div>
 
 </body>
 </html>
