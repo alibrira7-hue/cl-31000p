@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تجربة رقمية مذهلة</title>
+    <!-- استيراد خط تجريد عصري من جوجل -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* خلفية متدرجة متحركة */
+        .background-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            filter: blur(120px);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .background-glow-2 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #3b82f6, #14b8a6);
+            filter: blur(140px);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        /* الهيدر */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        /* القسم الرئيسي */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            background: rgba(99, 102, 241, 0.1);
+            color: #818cf8;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 span {
+            background: linear-gradient(90deg, #818cf8, #e879f9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        /* الأزرار */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.9rem 2.2rem;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border: none;
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* بطاقات الميزات */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #f8fafc;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* التجاوب مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- تأثيرات الإضاءة الخلفية -->
+    <div class="background-glow"></div>
+    <div class="background-glow-2"></div>
+
+    <!-- رأس الصفحة -->
+    <header>
+        <div class="logo">NovaSphere</div>
+        <nav>
+            <a href="#">الرئيسية</a>
+            <a href="#">المميزات</a>
+            <a href="#">من نحن</a>
+            <a href="#">اتصل بنا</a>
+        </nav>
+    </header>
+
+    <!-- المحتوى البارز -->
+    <section class="hero">
+        <div class="badge">✨ تصميم المستقبل بين يديك</div>
+        <h1>اصنع تجارب ويب استثنائية <span>بكل سهولة</span></h1>
+        <p>نقدم لك تصاميم ذكية وعصرية تجمع بين جمال الألوان، سلاسة الأداء، وتجربة مستخدم لا تُنسى لتتميز عن الجميع.</p>
+        
+        <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">ابدأ الانجاز الآن</a>
+            <a href="#" class="btn btn-secondary">استكشف الأعمال</a>
+        </div>
+    </section>
+
+    <!-- بطاقات الميزات -->
+    <section class="features">
+        <div class="feature-card">
+            <h3>سرعة فائقة</h3>
+            <p>أكواد نظيفة ومُحسّنة بالكامل لضمان تحميل صفحاتك في أجزاء من الثانية.</p>
+        </div>
+        <div class="feature-card">
+            <h3>تصميم متجاوب</h3>
+            <p>يتكيف بسلاسة تامة مع جميع الشاشات، من الهواتف الذكية وحتى الشاشات العملاقة.</p>
+        </div>
+        <div class="feature-card">
+            <h3>مظهر عصري</h3>
+            <p>نظام ألوان داكن فخم يعتمد على تقنيات الزجاج المعشى (Glassmorphism).</p>
+        </div>
+    </section>
+
+</body>
+</html>
