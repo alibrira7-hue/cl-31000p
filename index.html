@@ -4,390 +4,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مختبر الإبداع البصري</title>
-
+<title>LUXURY CARS</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #090d1a;
-  --card: #151c30;
-  --text: #f5f7ff;
-  --purple: #a855f7;
-  --blue: #38bdf8;
-  --pink: #ec4899;
-  --green: #34d399;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ background:#080808;color:white;
+ font-family:'Cairo',sans-serif;
+ overflow-x:hidden;
 }
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+header{
+ height:85px;padding:0 7%;
+ display:flex;align-items:center;
+ justify-content:space-between;
+ position:absolute;top:0;width:100%;
+ z-index:10;
+ border-bottom:1px solid #ffffff20;
 }
-
-body {
-  font-family: Tahoma, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
+.logo{font-size:27px;font-weight:900;color:#d6ad60}
+nav{display:flex;gap:35px}
+nav a{color:white;text-decoration:none;transition:.3s}
+nav a:hover{color:#d6ad60}
+.hero{
+ min-height:100vh;
+ position:relative;
+ display:flex;align-items:center;
+ overflow:hidden;
+ background:
+ linear-gradient(90deg,#080808 5%,#080808aa 42%,transparent 100%),
+ url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=2000')
+ center/cover no-repeat;
 }
-
-header {
-  padding: 70px 20px;
-  text-align: center;
-  background:
-    radial-gradient(circle at 20% 20%, #7c3aed55, transparent 40%),
-    radial-gradient(circle at 80% 80%, #0891b255, transparent 40%),
-    #090d1a;
+.hero::after{
+ content:"";position:absolute;inset:0;
+ background:linear-gradient(0deg,#080808 0%,transparent 40%);
+ pointer-events:none;
 }
-
-header h1 {
-  font-size: clamp(32px, 6vw, 65px);
-  background: linear-gradient(90deg,#38bdf8,#c084fc,#f472b6);
-  -webkit-background-clip: text;
-  color: transparent;
-  margin-bottom: 20px;
+.content{
+ position:relative;z-index:2;
+ margin-right:9%;max-width:570px;
+ animation:show 1.3s ease;
 }
-
-header p {
-  color: #aab5d0;
-  font-size: 18px;
+.tag{color:#d6ad60;letter-spacing:4px;font-size:13px}
+h1{
+ font-size:clamp(48px,7vw,90px);
+ line-height:1.2;font-weight:900;
+ margin:20px 0;
 }
-
-.container {
-  max-width: 1150px;
-  margin: auto;
-  padding: 30px 20px;
+h1 span{color:#d6ad60}
+.content p{color:#ccc;font-size:17px;line-height:2}
+.btn{
+ display:inline-block;margin-top:30px;
+ padding:14px 40px;
+ background:#d6ad60;color:#080808;
+ text-decoration:none;font-weight:bold;
+ transition:.4s;
 }
-
-h2 {
-  margin: 40px 0 20px;
-  color: #c4b5fd;
+.btn:hover{background:white;transform:translateY(-5px)}
+.stats{
+ display:flex;gap:55px;margin-top:60px;
 }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 20px;
+.stat h2{color:#d6ad60;font-size:30px}
+.stat p{font-size:12px;color:#aaa}
+.scroll{
+ position:absolute;bottom:35px;left:7%;
+ color:#d6ad60;z-index:3;
+ writing-mode:vertical-rl;
+ letter-spacing:4px;font-size:11px;
 }
-
-.card {
-  background: var(--card);
-  padding: 25px;
-  border-radius: 18px;
-  border: 1px solid #ffffff12;
-  transition: .3s;
+.cars{padding:100px 7%;background:#080808}
+.section-title{text-align:center;margin-bottom:55px}
+.section-title h2{font-size:40px}
+.section-title span{color:#d6ad60}
+.cards{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:25px;
 }
-
-.card:hover {
-  transform: translateY(-7px);
-  border-color: #a855f7;
-  box-shadow: 0 15px 40px #7c3aed30;
+.card{
+ background:#151515;overflow:hidden;
+ border:1px solid #ffffff12;
+ transition:.4s;
 }
-
-/* تدرجات الألوان */
-
-.gradient {
-  height: 130px;
-  border-radius: 15px;
-  background: linear-gradient(135deg,#7c3aed,#ec4899,#f97316);
+.card:hover{transform:translateY(-10px);border-color:#d6ad60}
+.card img{width:100%;height:220px;object-fit:cover}
+.card h3{padding:18px 20px 5px}
+.card p{padding:0 20px 20px;color:#aaa}
+@keyframes show{
+ from{opacity:0;transform:translateY(35px)}
+ to{opacity:1;transform:translateY(0)}
 }
-
-.gradient2 {
-  height: 130px;
-  border-radius: 15px;
-  background: linear-gradient(135deg,#06b6d4,#3b82f6,#8b5cf6);
-}
-
-.gradient3 {
-  height: 130px;
-  border-radius: 15px;
-  background: radial-gradient(circle,#facc15,#f97316,#7c2d12);
-}
-
-/* الأشكال الهندسية */
-
-.shapes {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 25px;
-}
-
-.circle {
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  background: linear-gradient(45deg,#06b6d4,#8b5cf6);
-}
-
-.square {
-  width: 85px;
-  height: 85px;
-  background: linear-gradient(45deg,#f43f5e,#facc15);
-  transform: rotate(15deg);
-}
-
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 45px solid transparent;
-  border-right: 45px solid transparent;
-  border-bottom: 85px solid #34d399;
-}
-
-/* توهج */
-
-.glow {
-  width: 120px;
-  height: 120px;
-  margin: 20px auto;
-  border-radius: 50%;
-  background: #a855f7;
-  box-shadow: 0 0 25px #a855f7,
-              0 0 60px #a855f7,
-              0 0 100px #a855f755;
-}
-
-/* الحركة */
-
-.animation {
-  width: 75px;
-  height: 75px;
-  margin: 25px auto;
-  border-radius: 15px;
-  background: linear-gradient(45deg,#06b6d4,#a855f7);
-  animation: rotate 4s linear infinite;
-}
-
-@keyframes rotate {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.3); }
-  100% { transform: rotate(360deg) scale(1); }
-}
-
-.pulse {
-  width: 60px;
-  height: 60px;
-  margin: 30px auto;
-  border-radius: 50%;
-  background: #ec4899;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0%,100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: .5; }
-}
-
-/* الأزرار */
-
-button {
-  border: none;
-  padding: 13px 25px;
-  margin: 8px;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-  font-size: 15px;
-  transition: .3s;
-}
-
-button:hover {
-  transform: scale(1.08);
-  filter: brightness(1.2);
-}
-
-.btn-purple {
-  background: linear-gradient(45deg,#7c3aed,#c084fc);
-}
-
-.btn-blue {
-  background: linear-gradient(45deg,#0284c7,#38bdf8);
-}
-
-.btn-pink {
-  background: linear-gradient(45deg,#db2777,#fb7185);
-}
-
-/* الرسوم البيانية */
-
-.chart {
-  display: flex;
-  align-items: end;
-  justify-content: space-around;
-  height: 220px;
-  padding: 15px;
-  gap: 12px;
-}
-
-.bar {
-  flex: 1;
-  max-width: 65px;
-  border-radius: 9px 9px 0 0;
-  background: linear-gradient(to top,#7c3aed,#38bdf8);
-  animation: grow 1.5s ease-out;
-}
-
-@keyframes grow {
-  from { height: 0; }
-}
-
-/* الزجاج */
-
-.glass {
-  background: #ffffff12;
-  border: 1px solid #ffffff35;
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 30px;
-}
-
-/* الألوان */
-
-.colors {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(90px,1fr));
-  gap: 10px;
-}
-
-.color {
-  height: 85px;
-  border-radius: 12px;
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  padding: 8px;
-  font-size: 11px;
-}
-
-footer {
-  text-align: center;
-  padding: 40px;
-  color: #8490aa;
+@media(max-width:800px){
+ nav{gap:12px;font-size:12px}
+ .hero{background-position:60% center}
+ .content{margin:0 7%;padding-top:100px}
+ .cards{grid-template-columns:1fr}
+ .stats{gap:25px}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <h1>مختبر الإبداع البصري</h1>
-  <p>اكتشف عالم الألوان والتصميم والرسوم والحركة</p>
+ <div class="logo">LUXURY.</div>
+ <nav>
+  <a href="#">الرئيسية</a>
+  <a href="#cars">السيارات</a>
+  <a href="#about">من نحن</a>
+ </nav>
 </header>
 
-<main class="container">
+<section class="hero">
+ <div class="content">
+  <div class="tag">THE ART OF DRIVING</div>
+  <h1>قوة.<br><span>فخامة.</span><br>بلا حدود.</h1>
+  <p>اكتشف عالم السيارات الاستثنائية، حيث تلتقي القوة بالأناقة والتكنولوجيا.</p>
+  <a href="#cars" class="btn">اكتشف السيارات ↗</a>
 
-<h2>1. التدرجات اللونية</h2>
-<div class="grid">
-  <div class="card"><div class="gradient"></div><p>تدرج ناري</p></div>
-  <div class="card"><div class="gradient2"></div><p>تدرج فضائي</p></div>
-  <div class="card"><div class="gradient3"></div><p>تدرج شمسي</p></div>
-</div>
-
-<h2>2. الأشكال الهندسية</h2>
-<div class="card shapes">
-  <div class="circle"></div>
-  <div class="square"></div>
-  <div class="triangle"></div>
-</div>
-
-<h2>3. الإضاءة والتوهج</h2>
-<div class="grid">
-  <div class="card">
-    <div class="glow"></div>
-    <p>تأثير الإضاءة النيونية</p>
+  <div class="stats">
+   <div class="stat"><h2>250+</h2><p>سيارة فاخرة</p></div>
+   <div class="stat"><h2>50+</h2><p>علامة عالمية</p></div>
+   <div class="stat"><h2>100%</h2><p>تميز وأناقة</p></div>
   </div>
-  <div class="card">
-    <div class="pulse"></div>
-    <p>تأثير النبض</p>
-  </div>
-</div>
+ </div>
+ <div class="scroll">SCROLL TO EXPLORE</div>
+</section>
 
-<h2>4. الرسوم المتحركة</h2>
-<div class="grid">
+<section class="cars" id="cars">
+ <div class="section-title">
+  <h2>اختيارات <span>النخبة</span></h2>
+  <p style="color:#888">اكتشف روعة التصميم والأداء</p>
+ </div>
+
+ <div class="cards">
   <div class="card">
-    <div class="animation"></div>
-    <p>الدوران والتكبير</p>
+   <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800" alt="سيارة رياضية">
+   <h3>Porsche 911</h3>
+   <p>الأداء الألماني الأسطوري</p>
   </div>
   <div class="card">
-    <div class="pulse"></div>
-    <p>الحركة الدورية</p>
+   <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800" alt="سيارة فاخرة">
+   <h3>BMW M Series</h3>
+   <p>القوة والأناقة</p>
   </div>
-</div>
-
-<h2>5. الأزرار التفاعلية</h2>
-<div class="card" style="text-align:center">
-  <button class="btn-purple" onclick="alert('مرحباً بالإبداع!')">زر بنفسجي</button>
-  <button class="btn-blue" onclick="changeBackground()">تغيير الخلفية</button>
-  <button class="btn-pink" onclick="randomColor()">لون عشوائي</button>
-</div>
-
-<h2>6. الرسوم البيانية</h2>
-<div class="card">
-  <p>مخطط الأعمدة التوضيحي</p>
-  <div class="chart">
-    <div class="bar" style="height:45%"></div>
-    <div class="bar" style="height:80%"></div>
-    <div class="bar" style="height:60%"></div>
-    <div class="bar" style="height:100%"></div>
-    <div class="bar" style="height:70%"></div>
-    <div class="bar" style="height:90%"></div>
+  <div class="card">
+   <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=800" alt="سيارة رياضية">
+   <h3>Super Cars</h3>
+   <p>تجربة قيادة استثنائية</p>
   </div>
-</div>
-
-<h2>7. لوحة الألوان</h2>
-<div class="colors">
-  <div class="color" style="background:#ef4444">أحمر</div>
-  <div class="color" style="background:#f97316">برتقالي</div>
-  <div class="color" style="background:#eab308">أصفر</div>
-  <div class="color" style="background:#22c55e">أخضر</div>
-  <div class="color" style="background:#06b6d4">سماوي</div>
-  <div class="color" style="background:#3b82f6">أزرق</div>
-  <div class="color" style="background:#8b5cf6">بنفسجي</div>
-  <div class="color" style="background:#ec4899">وردي</div>
-</div>
-
-<h2>8. تأثير الزجاج Glassmorphism</h2>
-<div class="card" style="
- background:linear-gradient(120deg,#7c3aed,#0891b2,#db2777);
- padding:30px;">
-  <div class="glass">
-    <h3>تصميم زجاجي عصري</h3>
-    <p>شفافية + ضبابية + إضاءة + عمق بصري</p>
-  </div>
-</div>
-
-</main>
-
-<footer>
-  صُنع باستخدام HTML و CSS و JavaScript
-  <p>Creative Visual Lab © 2026</p>
-</footer>
-
-<script>
-function changeBackground() {
-  document.body.style.background =
-    document.body.style.background === 'rgb(20, 20, 40)'
-    ? '#090d1a' : 'rgb(20, 20, 40)';
-}
-
-function randomColor() {
-  const color = '#' + Math.floor(
-    Math.random()*16777215
-  ).toString(16).padStart(6,'0');
-
-  document.documentElement.style.setProperty(
-    '--purple', color
-  );
-
-  document.querySelector('header h1').style.background =
-    `linear-gradient(90deg,${color},#38bdf8,#ec4899)`;
-
-  document.querySelector('header h1').style.webkitBackgroundClip =
-    'text';
-}
-</script>
+ </div>
+</section>
 
 </body>
 </html>
