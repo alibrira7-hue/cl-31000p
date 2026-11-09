@@ -1,267 +1,219 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دار الأصالة | الأزياء المغربية</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أناقة للمدلات النسائية | الأحذية والحقائب</title>
+    <!-- استدعاء خط عربي أنيق -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        body {
+            background-color: #fcfbfa;
+            color: #2c2c2c;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            /* خلفية ناعمة دمجت فيها صورة فخمة وشفافة لإعطاء عمق بصري راقي */
+            background-image: linear-gradient(rgba(252, 251, 250, 0.92), rgba(252, 251, 250, 0.92)), 
+                              url('https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+        }
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+        .container {
+            width: 100%;
+            max-width: 440px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            padding: 30px 20px;
+        }
 
-body {
-  font-family: 'Cairo', sans-serif;
-  min-height: 100vh;
-  background: #f3eee6;
-  color: #3c3025;
-  display: flex;
-  justify-content: center;
-  padding: 25px 15px;
-}
+        /* رأس الصفحة والشعار */
+        .profile-header {
+            margin-bottom: 25px;
+        }
 
-.container {
-  width: 100%;
-  max-width: 430px;
-  text-align: center;
-}
+        .avatar-container {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #d4af37;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
 
-.hero {
-  position: relative;
-  height: 245px;
-  overflow: hidden;
-  border-radius: 22px;
-  box-shadow: 0 12px 30px #4c39231c;
-}
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+        h1 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(transparent, #20150b80);
-}
+        p.subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
 
-.brand {
-  margin: 22px 0 18px;
-}
+        /* شريط مصغر يدمج أناقة الحقائب والأحذية كخلفية جمالية متناسقة */
+        .mini-banner {
+            width: 100%;
+            height: 70px;
+            border-radius: 12px;
+            background-image: url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 25px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+        }
 
-.brand h1 {
-  font-size: 32px;
-  color: #76512f;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
+        /* قائمة الروابط والأزرار */
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
 
-.brand .en {
-  color: #a58a68;
-  font-size: 10px;
-  letter-spacing: 4px;
-  direction: ltr;
-}
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            color: #2c2c2c;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-weight: 500;
+            font-size: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-.brand p {
-  font-size: 13px;
-  color: #81705f;
-  margin-top: 12px;
-}
+        .link-btn i {
+            font-size: 18px;
+            color: #8c7355;
+            transition: transform 0.3s ease;
+        }
 
-.line {
-  width: 55px;
-  height: 2px;
-  background: #c5a16c;
-  margin: 15px auto;
-}
+        .link-btn span {
+            flex-grow: 1;
+            text-align: center;
+        }
 
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 20px 0;
-}
+        /* تأثيرات اللمس والتحويم للأزرار */
+        .link-btn:hover, .link-btn:active {
+            background: #1a1a1a;
+            color: #ffffff;
+            transform: translateY(-2px);
+            border-color: #1a1a1a;
+        }
 
-.gallery img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px #00000012;
-}
+        .link-btn:hover i, .link-btn:active i {
+            color: #d4af37;
+            transform: scale(1.1);
+        }
 
-.section-title {
-  font-size: 17px;
-  color: #76512f;
-  margin: 22px 0 13px;
-}
+        /* زر مميز للواتساب */
+        .link-btn.whatsapp {
+            background: #25d366;
+            color: white;
+            border: none;
+        }
+        .link-btn.whatsapp i {
+            color: white;
+        }
+        .link-btn.whatsapp:hover {
+            background: #1ebe5d;
+        }
 
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.btn {
-  text-decoration: none;
-  padding: 14px 18px;
-  border-radius: 13px;
-  background: #fff;
-  color: #65472e;
-  font-size: 14px;
-  font-weight: 700;
-  border: 1px solid #e6dac9;
-  transition: .25s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  box-shadow: 0 4px 12px #00000008;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  background: #795b3b;
-  color: white;
-}
-
-.whatsapp {
-  background: #276b4c;
-  color: white;
-  border: none;
-}
-
-.whatsapp:hover {
-  background: #174d36;
-}
-
-.location {
-  background: #785b3c;
-  color: white;
-  border: none;
-}
-
-.social {
-  margin-top: 23px;
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-}
-
-.social a {
-  color: #856b4d;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-footer {
-  color: #a18c75;
-  font-size: 11px;
-  margin-top: 30px;
-  padding-bottom: 10px;
-}
-
-</style>
+        /* تذييل الصفحة */
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <div class="container">
+        <!-- معلومات المحل والشعار -->
+        <div class="profile-header">
+            <div class="avatar-container">
+                <!-- صورة حقيقية مصغرة تعبر عن فخامة المنتجات -->
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=300&q=80" alt="شعار المحل">
+            </div>
+            <h1>بوتيك رَوان | Rawand Boutique</h1>
+            <p class="subtitle">أرقى تصاميم الأحذية والحقائب النسائية الحصرية</p>
+        </div>
 
-  <!-- الصورة الرئيسية -->
-  <div class="hero">
-    <img
-      src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=900"
-      alt="أزياء تقليدية أنيقة">
-  </div>
+        <!-- بانر بصري مصغر مدمج بفن لعرض جمال الحقائب والأحذية -->
+        <div class="mini-banner" title="تشكيلة مميزة"></div>
 
-  <!-- اسم المحل -->
-  <div class="brand">
-    <h1>دار الأصالة</h1>
-    <div class="en">DAR AL ASSALA</div>
-    <div class="line"></div>
-    <p>
-      أناقة مغربية تحكي قصة الأصالة والفخامة
-      <br>
-      مرحباً بكم في عالم الأزياء التقليدية.
-    </p>
-  </div>
+        <!-- الأزرار التفاعلية (Linktree Style) -->
+        <div class="links-list">
+            <!-- زر الواتساب الرئيسي للطلب -->
+            <a href="https://wa.me/966500000000" target="_blank" class="link-btn whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>طلب واستفسار عبر الواتساب</span>
+                <i class="fa-solid fa-chevron-left" style="font-size: 11px;"></i>
+            </a>
 
-  <!-- صور المنتجات -->
-  <div class="gallery">
-    <img
-      src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600"
-      alt="أزياء نسائية">
+            <!-- زر كتالوج المنتجات -->
+            <a href="#" class="link-btn">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>تصفح كتالوج الحقائب والأحذية</span>
+                <i class="fa-solid fa-chevron-left" style="font-size: 11px;"></i>
+            </a>
 
-    <img
-      src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600"
-      alt="أناقة وأزياء">
-  </div>
+            <!-- زر إنستغرام -->
+            <a href="#" target="_blank" class="link-btn">
+                <i class="fa-brands fa-instagram"></i>
+                <span>تابعنا على إنستغرام</span>
+                <i class="fa-solid fa-chevron-left" style="font-size: 11px;"></i>
+            </a>
 
-  <h2 class="section-title">يسعدنا تواصلكم معنا</h2>
+            <!-- زر موقع المحل على الخريطة -->
+            <a href="#" target="_blank" class="link-btn">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>موقعنا على الخريطة (فرع الرياض)</span>
+                <i class="fa-solid fa-chevron-left" style="font-size: 11px;"></i>
+            </a>
+        </div>
 
-  <!-- الروابط -->
-  <div class="links">
-
-    <a class="btn whatsapp"
-       href="https://wa.me/212600000000"
-       target="_blank">
-       <span>☏</span>
-       تواصل معنا عبر واتساب
-    </a>
-
-    <a class="btn location"
-       href="https://maps.google.com/?q=Marrakech,Morocco"
-       target="_blank">
-       <span>📍</span>
-       موقع المحل على الخريطة
-    </a>
-
-    <a class="btn"
-       href="https://instagram.com/"
-       target="_blank">
-       <span>◎</span>
-       تابعونا على Instagram
-    </a>
-
-    <a class="btn"
-       href="https://facebook.com/"
-       target="_blank">
-       <span>f</span>
-       صفحتنا على Facebook
-    </a>
-
-    <a class="btn"
-       href="https://tiktok.com/"
-       target="_blank">
-       <span>♪</span>
-       شاهدونا على TikTok
-    </a>
-
-  </div>
-
-  <div class="social">
-    <a href="https://instagram.com/">INSTAGRAM</a>
-    <a href="https://facebook.com/">FACEBOOK</a>
-    <a href="https://tiktok.com/">TIKTOK</a>
-  </div>
-
-  <footer>
-    © 2026 دار الأصالة — جميع الحقوق محفوظة
-    <br>
-    صُنع بحب في المغرب 🇲🇦
-  </footer>
-
-</div>
+        <!-- حقوق النشر -->
+        <div class="footer">
+            جميع الحقوق محفوظة &copy; 2026
+        </div>
+    </div>
 
 </body>
 </html>
