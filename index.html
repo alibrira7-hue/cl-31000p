@@ -17,6 +17,26 @@
             font-family: 'Tajawal', sans-serif;
         }
 
+        /* شارة مائلة في أعلى الصفحة معزولة تماماً عن تخطيط الصفحة */
+        .top-slanted-tag {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 9999;
+            background: linear-gradient(135deg, #b86b5e, #8c4a3f);
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            transform: rotate(-8deg);
+            box-shadow: 0 6px 16px rgba(140, 74, 63, 0.28);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            pointer-events: none;
+            user-select: none;
+        }
+
         body {
             background: linear-gradient(135deg, #fcf6f5 0%, #f4e8e6 100%);
             color: #2c2c2c;
@@ -176,6 +196,8 @@
     </style>
 </head>
 <body>
+
+    <div class="top-slanted-tag" aria-hidden="true">كل شيء 80 درهم</div>
 
     <div class="linktree-container">
         <!-- الهيدر مع صورة خلفية حقيقية وأنيقة للأحذية/الحقائب -->
